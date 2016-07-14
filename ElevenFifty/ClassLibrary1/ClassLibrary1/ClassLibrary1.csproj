@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{F065433F-648E-4A7B-A6DF-5DBDC6124420}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ClassLibrary1</RootNamespace>
+    <AssemblyName>ClassLibrary1</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="BasicTypes\02-Arithmatic.csx" />
+    <None Include="FlowControl\Exceptions.csx" />
+    <None Include="Functions\03-Exercise.csx" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <None Include="BasicTypes\05-DateTime.csx" />
+    <None Include="BasicTypes\z1_Excercises.csx" />
+    <None Include="Collections\01-Arrays.csx" />
+    <None Include="Collections\02-Lists.csx" />
+    <None Include="Collections\03-Dictionaries.csx" />
+    <None Include="Collections\z2_Exercise.csx" />
+    <None Include="Collections\z3_Exercise.csx" />
+    <None Include="FlowControl\01-DoLoops.csx" />
+    <None Include="FlowControl\02-ForLoops.csx" />
+    <None Include="FlowControl\03-Conditionals.csx" />
+    <None Include="FlowControl\04-Switch.csx" />
+    <None Include="Functions\01-Actions.csx" />
+    <None Include="Functions\02-Functions.csx" />
+    <None Include="Functions\04-FunctionsRevisited.csx" />
+    <None Include="OOP\01-Principles.csx" />
+    <None Include="OOP\02-BasicClasses.csx" />
+    <None Include="OOP\03-Controls.csx" />
+    <None Include="OOP\04-StaticClasses.csx" />
+    <None Include="OOP\05-Interfaces.csx" />
+    <None Include="OOP\z04-Exercise.csx" />
+    <None Include="OOP\z06-Exercise.csx" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <None Include="BasicTypes\01-BasicTypes.csx" />
+    <None Include="BasicTypes\03-StringConstruction.csx" />
+    <None Include="BasicTypes\04-TypeInversions.csx" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
