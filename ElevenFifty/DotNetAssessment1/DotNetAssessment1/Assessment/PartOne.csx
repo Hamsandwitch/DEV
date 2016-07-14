@@ -2,7 +2,7 @@
 using System.Linq;
 using System.Collections.Generic;
 using System.Collections;
-System.Text;
+using System.Text;
 
 //PART ONE: The Basics
 
@@ -11,23 +11,16 @@ bool thisIsABoolean = true;
 double thisIsADouble = 3.3;
 decimal thisIsADecimal = 4.32m;
 
-// 
-
-public class Example
+string stuffToString()
 {
-        public stuffToString()
-    {
-        Example convertStuff = new Example();
-        var abcd = Convert.ToString(thisIsAnInteger);
-        var dcba = Convert.ToString(thisIsADouble);
-        //return ($"{abcd}" + "" + $"{dcba}");
+    string ab = Convert.ToString(thisIsAnInteger);
+    string ba = Convert.ToString(thisIsADouble);
 
-        var stringSum = ($"{abcd}" + "" + $"{dcba}");
-        Console.WriteLine(stringSum); //still tells me i need to return a value ?
-    }
+    var stringSum = ($"{ab}" + "" + $"{ba}");
+    return ($"{stringSum}");
+    Console.WriteLine("stringSum");
 }
-
-
+Console.WriteLine(stuffToString());
 
 
 var myArray = new string[5];
@@ -38,9 +31,7 @@ myArray[3] = "Tim";
 myArray[4] = "Dave";
 
 for (var x = 0; x < 5; x++)
-
-    Console.WriteLine($"Name: {myArray[x]}");
-
+Console.WriteLine($"Name: {myArray[x]}");
 
 // I just wanted to see the damn thing work..
 //int thisIsAnInteger = 23;
