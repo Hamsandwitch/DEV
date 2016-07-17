@@ -2,19 +2,13 @@
 using System.Linq;
 using System.Collections.Generic;
 using System.Collections;
-
-
-
 //Part Two
 public enum Gender
 {
-
     Unknown,
     Male,
     Female,
-
 };
-
 public class Customer
 {
     private string _name;
@@ -26,11 +20,9 @@ public class Customer
 
     public Customer(string name, string purchase, Gender gender)  //2 Constructor
     {
-
         Name = name;
         Purchase = purchase;
         Gender = gender;
-
     }
 
     public string Name
