@@ -11,6 +11,15 @@ bool thisIsABoolean = true;
 double thisIsADouble = 3.3;
 decimal thisIsADecimal = 4.32m;
 
+//simplified version
+string buildString(int thisIsAnInteger, decimal thisIsADecimal)
+{
+    return $"Heres the result of simplified combining to a string... {thisIsAnInteger}-{thisIsADecimal}";
+}
+var talky = buildString(thisIsAnInteger, thisIsADecimal);
+Console.WriteLine(talky);
+
+//still works tho
 string stuffToString()
 {
     string ab = Convert.ToString(thisIsAnInteger);
@@ -32,15 +41,3 @@ myArray[4] = "Dave";
 
 for (var x = 0; x < 5; x++)
 Console.WriteLine($"Name: {myArray[x]}");
-
-// I just wanted to see the damn thing work..
-//int thisIsAnInteger = 23;
-//bool thisIsABoolean = true;
-//double thisIsADouble = 3.3;
-//decimal thisIsADecimal = 4.32m;
-
-
-//var abcd = Convert.ToString(thisIsAnInteger);
-//var dcba = Convert.ToString(thisIsADouble);
-//var stringSum = ($"{abcd}" + "" + $"{dcba}");
-//Console.WriteLine(stringSum);

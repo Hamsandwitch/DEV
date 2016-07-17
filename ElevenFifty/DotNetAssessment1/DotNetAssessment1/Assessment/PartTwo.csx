@@ -6,7 +6,7 @@ using System.Collections;
 
 
 //Part Two
-public enum gender
+public enum Gender
 {
 
     Unknown,
@@ -32,20 +32,7 @@ public class Customer
         Gender = gender;
 
     }
-    protected virtual void inactiveCustomer(int monthsInactive)
-    {
-       Console.WriteLine($"Thanks for shopping with us { Name}. We saw that you purchased an {Purchase} from us {monthsInactive} months ago. We'd like to know if you'd like to take a look at some of our current deals."
 
-
-        public enum gender
-        {
-
-        Dead,
-        Coma,
-        BetterChoices,
-
-        };
-}
     public string Name
     {
     get { return _name; }
@@ -78,7 +65,7 @@ public class Customer
     public virtual string printCustomerInfo() // 9
     {
         Console.WriteLine($"{Name} - {Purchase} - {Gender}");
-    };
+    }
     var date = DateTime.Now;
     public class sendSalesNotice // 4
     {
@@ -92,7 +79,35 @@ public class Customer
         return $"Hello Dave, We wanted to let you know there's a sale on {saleItem} starting {date}.";
     }
 
-};
+}
+
+protected virtual void inactiveCustomer(int monthsInactive) : base Customer;
+{ 
+    protected enum reasonInactive
+    {
+
+    Dead,
+    Coma,
+    BetterChoices,
+
+    };
+    protected override string printCustomerInfo() // 9
+    {
+    Console.WriteLine($"{Name} - {Purchase} - {Gender} - {reasonInactive}");
+    }
+
+    Console.WriteLine($"Thanks for shopping with us {Name}. We saw that you purchased an {Purchase} from us {monthsInactive} months ago. We'd like to know if you'd like to take a look at some of our current deals.");
+
+}
+
+
+
+
+
+
+
+
+
 
 var xx = new sendSalesNotice(date);
 var xxx = new sendSalesNotice(date, wordsnstuff);
