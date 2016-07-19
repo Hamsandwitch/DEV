@@ -1,15 +1,15 @@
-﻿using GuessingGame.Models;
+﻿using GuessGame.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace GuessingGame.Controllers
+namespace GuessGame.Controllers
 {
-    public class GuessingGameController : Controller
+    public class GuessGameController : Controller
     {
-        // GET: GuessingGame
+        // GET: GuessGame
         public ActionResult Index()
         {
             Session["Answer"] = new Random().Next(1, 10);
@@ -22,14 +22,23 @@ namespace GuessingGame.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Index(GuessingGameModel model)
+        public ActionResult Index(GuessGameModel model)
         {
             if (ModelState.IsValid)
             {
-                ViewBag.Win = GuessWasCorrect(model.Guess);
+                var win = GuessWasCorrect(model.Guess);
+                if (win) return RedirectToAction("Winner");
+
+                ViewBag.Win = win;
             }
+
             return View(model);
         }
 
+        public ActionResult Winner()
+        {
+            return View("Winner");
+
+        }
     }
 }

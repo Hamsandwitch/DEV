@@ -1,4 +1,4 @@
-﻿@model GuessingGame.Models.GuessingGameModel
+﻿@model GuessGame.Models.GuessGameModel
 
 @{
     ViewBag.Title = "Index";
@@ -8,7 +8,7 @@
 @if (!(ViewBag.Win ?? false))
 {
 
-    if (ViewBag.Win != null && !ViewBag.Win)
+    if (ViewBag.Win != null)
     {
         <h2>Sorry @Model.PlayerName... @Model.Guess is NOT the number!</h2>
     }
@@ -55,21 +55,22 @@
                     new { @class = "text-danger" })
                 </div>
             </div>
-        </div>
-        <div class="form-control">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Guess" class="btn btn-default">
+
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Guess" class="btn btn-default" />
+
+                </div>
             </div>
-
         </div>
-
 
 
     }
 }
 else
 {
-    <h2>That's it, @Model.PlayerName! The answer was @Model.Guess!</h2>
+    @Html.Action("Winner", "GuessGame");
+   @* @Response.Redirect("~/GuessGame/Winner");*@
 }
 
 <div>
