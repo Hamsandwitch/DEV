@@ -15,11 +15,14 @@ namespace GuessGame.Controllers
             Session["Answer"] = new Random().Next(1, 10);
             return View();
         }
-        private bool GuessWasCorrect(int guess)
+      //  private bool GuessWasCorrect(int guess)
+      //  {
+      //      return guess == (int)Session["Answer"];
+      //  }
+        private int GuessWasCorrect(int guess)
         {
-            return guess == (int)Session["Answer"];
+            return guess.CompareTo((int)Session["Answer"]);
         }
-
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Index(GuessGameModel model)
@@ -27,7 +30,7 @@ namespace GuessGame.Controllers
             if (ModelState.IsValid)
             {
                 var win = GuessWasCorrect(model.Guess);
-                if (win) return RedirectToAction("Winner");
+                if (win == 0) return RedirectToAction("Winner");
 
                 ViewBag.Win = win;
             }
@@ -40,5 +43,6 @@ namespace GuessGame.Controllers
             return View("Winner");
 
         }
+       
     }
 }

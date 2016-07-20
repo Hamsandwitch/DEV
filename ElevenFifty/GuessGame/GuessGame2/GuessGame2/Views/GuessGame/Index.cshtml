@@ -1,18 +1,25 @@
-﻿@model GuessGame.Models.GuessGameModel
+﻿
+@model GuessGame.Models.GuessGameModel
 
 @{
-    ViewBag.Title = "Index";
+   @*Layout = null;*@
+ViewBag.Title = "Index";
 }
 @* This is how you embed a comment. *@
+<br/><br/><br/><br/><br/><br/>
 <h2>Guessing Game of Unbelievable Bewilderment</h2>
-@if (!(ViewBag.Win ?? false))
+@if ((ViewBag.Win ?? -1) != 0)
 {
 
-    if (ViewBag.Win != null)
-    {
-        <h2>Sorry @Model.PlayerName... @Model.Guess is NOT the number!</h2>
-    }
-
+        if (ViewBag.Win < 0)
+        {
+            <h2>Sorry, @Model.PlayerName, @Model.Guess is too low.</h2>
+        }
+        else if (ViewBag.Win > 0)
+        {
+            <h2>Sorry, @Model.PlayerName, @Model.Guess is too high</h2>
+        }
+    
     using (Html.BeginForm())
     {
         @Html.AntiForgeryToken()
@@ -74,5 +81,5 @@ else
 }
 
 <div>
-    @Html.ActionLink("Start Over", "Index")
+    @Html.ActionLink("Start Over", "Index", "GuessGame", null, new { @class = "btn btn-danger" })  @*@Html.ActionLink("Start Over", "Index")*@
 </div>

@@ -12,6 +12,8 @@ namespace GuessGame.Models
         [Required(ErrorMessage = "Name is required")]
         [MinLength(2, ErrorMessage = "Name is too short.")]
         [MaxLength(20, ErrorMessage = "Name is too long")]
+      //[TooLow()]
+      //[TooHigh()]
         public string PlayerName { get; set; }
 
         [Display(Name = "What is your guess?")]
